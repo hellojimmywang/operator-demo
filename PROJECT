@@ -13,4 +13,13 @@ resources:
   kind: Mysqlcluster
   path: github.com/hellojimmywang/operator-demo/api/v1alpha1
   version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: radondb.com
+  group: db
+  kind: Mysqlbackup
+  path: github.com/hellojimmywang/operator-demo/api/v1alpha1
+  version: v1alpha1
 version: "3"

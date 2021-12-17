@@ -1,0 +1,60 @@
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - db.radondb.com
+  resources:
+  - mysqlbackups
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - db.radondb.com
+  resources:
+  - mysqlbackups/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - db.radondb.com
+  resources:
+  - mysqlbackups/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - db.radondb.com
+  resources:
+  - mysqlclusters
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - db.radondb.com
+  resources:
+  - mysqlclusters/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - db.radondb.com
+  resources:
+  - mysqlclusters/status
+  verbs:
+  - get
+  - patch
+  - update
